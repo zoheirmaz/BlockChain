@@ -25,7 +25,10 @@ class GUI:
         f = self.dlg.BlocksList.currentItem().text()
         file_name = "blocks/" + f + ".txt"
         file = open(file_name, "r")
-        content = file.readlines()[1:]
+        if file_name == 'blocks/block 1.txt':
+            content = file.readlines()
+        else:
+            content = file.readlines()[1:]
         file.close()
         tex = ''
         for i in content:
