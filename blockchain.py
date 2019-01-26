@@ -23,7 +23,7 @@ def create_new_block(sender, receiver, mes):
     file_list = get_all_blocks(mypath)
 
     if "block 1.txt" not in file_list:
-        file = open("blocks/" + "block 1.txt", "w")
+        file = open("blocks/" + "block 1.txt", "w+")
         write(file, sender, receiver, mes)
         file.close()
 
@@ -36,7 +36,7 @@ def create_new_block(sender, receiver, mes):
         number_of_block = file_list[-1].split(".")[0]
         number_of_block = int(number_of_block.split()[1])
         file_name = "blocks/" + "block " + str(number_of_block + 1) + ".txt"
-        new_file = open(file_name, "w")
+        new_file = open(file_name, "w+")
         new_file.write(hashed + "\n")
         write(new_file, sender, receiver, mes)
         new_file.close()
